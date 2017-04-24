@@ -1,0 +1,13 @@
+package checkvalue;
+
+public class threenum {
+	public static void main(String[]args)
+	{
+	//	int a=67,b=845,c=385;
+		//String d=(a>b)?(a>c)?("a is greater "):("c is gretaer "):(a>c)?(b>c)?("b is greatest"):("c is greatest"):("c is greatest");
+        int a=934,b=67, c=546;
+        String r=(a>b)&(a>c)?("a"):(b>c)?("b"):("c");
+		System.out.print(r);
+	}
+
+}

@@ -13,16 +13,13 @@ WAP to find greatest among three numbers using Using Conditional Operators
 WAP to swap two numbers using temp variables.
 WAP to swap two numbers without using temp variables.
 Try various operators that discussed today in the class.
+Write a program using conditional operator that if the number is even or nor
+Try post and pre increament and decreament operators as discuussed in class. 
 
 Date: 27/ 3/17
-WAP to demonstrate working of if else statement 
-Write a program using conditional operator that if the number is even or nor 
-Try post and pre increament and decreament operators as discuussed in class. 
+WAP to demonstrate working of if else statement
 WAP to find greatest among three numbers using 
           1) if else statement
-        
-          
-Date 28/7/2017
 1. WAP to find greatest among three numbers using if and esle if statement. 
 2. Write a program to create Simple Calculator using switch case.
 3. WAP to immplement swtich statement on days of week.

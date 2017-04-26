@@ -1,0 +1,146 @@
+
+public class test {
+
+	
+/*	//WAP to find a number is even or odd using ternary operator.
+	public static void main(String[]args)
+	{
+		int a=21;
+		if(a%2==0)
+			System.out.println("A is even");
+		else
+			System.out.println("A is odd");
+	}
+	*/
+/*
+//	WAP to find greatest between two numbers using Using Conditional Operators
+public static void main(String[]arg)
+{
+	int a=2;
+	int b=1;
+	int c=10;
+	if(a>b && a>c)
+		System.out.println("A is greater");
+	else if(c>b)
+		System.out.println("C is greater");
+	else
+		System.out.println("B is greater");
+}
+	*/
+	
+/*
+ //WAP to swap two numbers using temp variables.
+ public static void main(String[]arg)
+	{
+		int a=2;
+		int b=3;
+		int c=0;
+		c=b;
+		b=a;
+		a=c;
+		System.out.println("A is "+a+", "+"B is "+b);
+	}
+	*/
+	
+/*	//WAP to swap two numbers without using temp variables.
+	public static void main(String[]ag)
+	{
+		int a=5;
+		int b=12;
+		int c=0;
+		b=b-a;
+		a=a+b;
+		b=a-b;
+		System.out.println(b);
+	}
+	*/
+
+/*	//Write a program using conditional operator that if the number is even or not
+	public static void main(String[]ag)
+	{
+		int a=11;
+		String result = a%2==0 ? "Even" : "Odd";
+		System.out.println(a+ " is "+ result);
+		
+	}
+	*/
+	
+/*	//Try post and pre increment and decrement operators as discussed in class. 
+	public static void main(String[]ar)
+	{
+		int a=5;
+		//System.out.println(a++);
+		System.out.println(a++);
+		System.out.println(++a);
+	}*/
+
+
+	// Write a program to create Simple Calculator using switch case.
+		
+	
+	
+	
+/*	//3. WAP to immplement swtich statement on days of week.
+	public static void main(String[]ag)
+	{
+		int day=2;
+		switch(day)
+		{
+		case 1:
+			System.out.println("Monday");
+			break;
+		case 2:
+			System.out.println("Tuesday");
+			break;
+		case 3:
+			System.out.println("Wednesday");
+			break;
+		case 4:
+			System.out.println("Thursday");
+			break;
+		case 5:
+			System.out.println("Friday");
+			break;
+		case 6:
+			System.out.println("Saturday");
+			break;
+		case 7:
+			System.out.println("Sunday");
+			break;
+		}
+	}		*/
+	
+//	 Write a program to input electricity unit charges and calculate total electricity bill according to the given condition:
+ //        For first 50 units Rs. 0.50/unit  25
+ //        For next 100 units Rs. 0.75/unit	75
+ //        For next 100 units Rs. 1.20/unit		120
+  //       For unit above 250 Rs. 1.50/unit		
+  //       An additional surcharge of 20% is added to the bill 
+	public static void main(String[]ag)
+	{
+		double units=500;
+		double charges=0;
+		double discount=20;
+		if(units<=50)
+		{
+			charges=charges+(units*0.50);
+		}	
+		else if(units>50 && units<=150)
+		{
+			charges=(50*0.50)+(units-50)*0.75;
+		}
+		else if(units>150 && units<=250)
+		{
+			charges=(50*0.50)+(100)*0.75+(units-150)*1.20;
+		}
+		else if(units>250)
+		{
+			charges=(50*0.50)+(100)*0.75+(100)*1.20+(units-250)*1.50;
+		}
+		System.out.println("           Total Amount = "+charges);
+		discount=charges-(charges*(discount/100));
+		System.out.println("After 20% Discount Bill = "+discount);
+	}
+}
+
+

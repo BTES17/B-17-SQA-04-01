@@ -141,3 +141,35 @@ public static void main(String[]arg)
 		System.out.println("After 20% Discount Bill = "+discount);
 	}
 }
+
+
+/*import java.util.Scanner;
+
+public class loop {
+	public static void main(String[]ag)
+	{
+		System.out.println("Enter Value");
+		Scanner scan= new Scanner(System.in);
+		int val=scan.nextInt();
+	//int val=3;
+	int total=0;
+	int i;
+	for(i=1;i<=10;i++)
+	{
+		total=val+total;
+		System.out.println(val+"*"+ i+ " "+ " = "+total);
+	}
+	} 
+	*/
+/*	public static void main(String[]ag)
+	{
+		//int i=0;
+		//System.out.println(i);
+		for(int i=1;i<=50;i=i+2)
+		{
+			System.out.println(i);
+		}
+	}*/
+	
+//}
+

@@ -143,4 +143,23 @@ public static void main(String[]arg)
 	}
 }
 
+/*
+import java.util.Scanner;
+
+public class loop {
+	public static void main(String[]ag)
+	{
+		System.out.println("Enter Value");
+		Scanner scan= new Scanner(System.in);
+		int val=scan.nextInt();
+	//int val=3;
+	int total=0;
+	int i;
+	for(i=1;i<=10;i++)
+	{
+		total=val+total;
+		System.out.println(val+"*"+ i+ " "+ " = "+total);
+	}
+	} 
+	*/
 

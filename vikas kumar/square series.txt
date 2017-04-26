@@ -1,0 +1,18 @@
+package vikas;
+import java.util.Scanner;
+public class tabl {
+
+	public static void main(String args[])
+	{
+		Scanner input=new Scanner(System.in);
+		System.out.println("enter teh number upto you want series");
+		int x =input.nextInt();
+		
+		for(int i=1;i<=x;i++)
+		{
+			System.out.println(Math.pow(i, 2));
+		}
+		
+	}
+}
+

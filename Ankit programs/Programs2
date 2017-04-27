@@ -1,0 +1,121 @@
+	//Write a program to create Simple Calculator using switch case
+	
+/*	public static void main(String[]gs)
+		{
+		int total=0;
+		System.out.println("Enter sign");
+		Scanner scan= new Scanner(System.in);
+		char sign=scan.next().charAt(0);
+		System.out.println("Enter 1st number");
+		Scanner scan1= new Scanner(System.in);
+		int val1=scan1.nextInt();
+		System.out.println("Enter 2nd number");
+		Scanner scan2= new Scanner(System.in);
+		int val2=scan2.nextInt();
+		switch(sign)
+		{
+		case '*':
+			total=val1*val2;
+			System.out.println(val1+" * "+val2+"= "+total);
+			break;
+		case '/':
+			total=val1/val2;
+			System.out.println(val1+" / "+val2+" = "+total);
+			break;
+		case '+':
+			total=val1+val2;
+			System.out.println(val1+" + "+val2+" = "+total);
+			break;
+		case '-':
+			total=val1-val2;
+			System.out.println(val1+" - "+val2+" = "+total);
+			break;
+			}
+		}*/
+	
+//  WAP to enter the value in integer N through keyborad and print the series of the square of natural number upto N number of elements. 
+//like if you have enter 5 then square of first five natural number should be printed as 1 4 9 16 25.	
+	
+/*	public static void main(String[]ag)
+	{
+		System.out.println("Enter number");
+		Scanner scan=new Scanner(System.in);
+		int natural=scan.nextInt();
+		for(int i=1;i<=natural;i++)
+		{
+			System.out.println(i*i);
+		}
+	}*/
+	
+/*//WAP to print of the sum of all the squares obtain in above program.
+	public static void main(String[]ag)
+	{
+		int total=0;
+		System.out.println("Enter number");
+		Scanner scan=new Scanner(System.in);
+		int natural=scan.nextInt();
+		for(int i=1;i<=natural;i++)
+		{
+			total=total+(i*i);
+			System.out.println(i*i);
+			}
+		System.out.println("Sum of all natural numbers is "+total);
+		
+	}*/
+	
+//	Write a program to find factorial of number say number is 5 then factorial will be 1*2*3*4*5=120	
+/*public static void main(String[]dg)
+{
+	int total=1;
+	System.out.println("Enter number");
+	Scanner scan=new Scanner(System.in);
+	int natural=scan.nextInt();
+	for(int i=1;i<=natural;i++)
+	{
+		total=i*total;
+	}
+	System.out.println("Factorial of "+natural+" is "+total);
+}*/
+	
+/*	//Write a program to print fibonacci series that is 0 1 1 2 3 5 8 13 21.....
+	//its like the sum of last two number will be the next number in the series. 
+	public static void main(String[]ag)
+	{
+		int i=0;
+		int a=0;
+		int k=1;
+		System.out.println(i+" "+ k+" ");
+		for(int count=0;count<=5;count++)
+		{
+			a=i+k;		//0 0
+		i=k;
+		k=a;
+		System.out.print(a+" ");
+		k++;
+		}
+	}
+	*/
+// make the pattern 
+/*        1
+	   12
+	  123
+	 1234	
+	12345		*/
+	
+	public static void main(String[]gd)
+	{
+		int space=0;
+		int line=5;
+		int count=1;
+		int i=1;
+		for(space=1;space<=10;space++)
+		{
+			System.out.print(" ");
+		}
+			for(count=1;count<=i;count++)
+			{
+		System.out.println(i);
+}
+			System.out.println();
+			
+	}

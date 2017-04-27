@@ -1,0 +1,22 @@
+package vikas;
+import java.util.Scanner;
+public class reve {
+public static void main(String args[])
+		{
+		
+	Scanner input=new Scanner(System.in);
+	System.out.println("enter the value");
+	int num=input.nextInt();
+	
+	int z=num;
+	
+	int rev=0,digit,sum=0;
+	do
+	{
+		digit=num%10;
+		sum+=digit;
+		num=num/10;
+	}while(num!=0);
+	System.out.println(sum);
+ 	}
+}

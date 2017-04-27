@@ -1,0 +1,20 @@
+package vikas;
+import java.util.Scanner;
+public class reve {
+public static void main(String args[])
+		{
+		
+	Scanner input=new Scanner(System.in);
+	System.out.println("enter the value");
+	int num=input.nextInt();
+	
+	int rev=0,digit;
+	do
+	{
+		digit=num%10;
+		rev=rev*10+digit;
+		num=num/10;
+	}while(num!=0);
+	System.out.println(rev);
+	}
+}

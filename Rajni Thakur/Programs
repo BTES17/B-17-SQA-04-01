@@ -52,4 +52,20 @@ public class swaptemp {
 			
 		}
 	}
+public class squarenum {
+	public static void main(String[]args){
+		int total=0;
+		Scanner scan1=new Scanner(System.in);
+		System.out.println("enter the value");
+		int a=scan1.nextInt();
+			for(int i=1;i<=a;i++){
+				System.out.println(i*i);
+				total=(i*i)+total;
+				
+			}
+			System.out.println("sum of squares = "+total);
+		}
+	
+
 }
+

@@ -84,8 +84,9 @@
 		int i=0;
 		int a=0;
 		int k=1;
+		int num=10;
 		System.out.print(i+" "+ k+" ");
-		for(int count=0;count<=5;count++)
+		for(int count=0;count<=num;count++)
 		{
 				a=i+k;		
 				i=k;
@@ -95,7 +96,7 @@
 	}
 	*/
 // make the pattern 
-/*        1
+/*          1
 	   12
 	  123
 	 1234	
@@ -118,3 +119,66 @@
 			System.out.println();
 			
 	}
+
+
+//make the pattern 
+/*      1
+	   1 2
+	  1 2 3
+	 1 2 3 4	
+	1 2 3 4 5		*/
+
+/*public class test1 {
+public static void main(String[]ag)
+{
+	int space=5;
+	int count=1;
+	int line=5;
+	for(int k=0;k<=line;k++)
+	{
+		for(int i=1;i<=space;i++)
+		{
+			System.out.print(" ");
+			}
+		for(int m=1;m<=k;m++)
+		{
+			System.out.print(m+" ");
+		}
+		System.out.println();
+		space--;
+	}
+}
+}
+*/
+
+// make the pattern 
+	/*       1
+		    1 2
+		   1 2 3
+	      1 2 3 4
+         1 2 3 4 5		*/
+/*
+public class test1 {
+public static void main(String[]ag)
+{
+	int line=5;
+	int space=10;
+	int num=5;
+	int count=1;
+for(int j=1;j<=line;j++)	
+{
+	for(int i=0;i<=space;i++)
+	{
+		System.out.print(" ");
+	}
+for(int k=1;k<=count;k++)
+{
+	System.out.print(k+" ");
+	}
+System.out.println();
+space=space-1;
+count++;
+}
+}
+}
+*/

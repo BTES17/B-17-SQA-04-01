@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class vowelcon {
+
+	public static void main(String args[])
+	{
+		Scanner viki=new Scanner(System.in);
+		System.out.println("enter the character value");
+		
+		char ch=viki.next().charAt(0);
+		if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||ch=='a'||ch=='e'||ch=='i'
+			||ch=='o'||ch=='u')
+		{
+			System.out.println("enter character is vowel");
+		}else
+		{
+			System.out.println("enter Character is not vowel");
+		}
+	}
+}

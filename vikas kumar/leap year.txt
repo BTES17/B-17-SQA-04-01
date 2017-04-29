@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class leap {
+
+	public static void main(String args[])
+	{
+		Scanner viki =new Scanner(System.in);
+		System.out.println("enter the year");
+		int n=viki.nextInt();
+		
+		if(n%4==0 || n%400 ==0)
+		{
+			System.out.println(n+ " is a leap year ");
+		}else
+		{
+			System.out.println(n+ " is not a leap year ");
+		}
+		
+	}
+}

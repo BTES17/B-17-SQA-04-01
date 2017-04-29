@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class leap {
+
+	public static void main(String args[])
+	{
+		
+		Scanner viki =new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=viki.nextInt();
+		int z=num;
+		int fin=0,count=0,count1=0,digit,digit1,rev=0;
+		do
+		{
+			digit=num%10;
+			count+=digit;
+		
+		
+			num=num/10;
+		}while(num!=0);
+		System.out.println("when adding the numbers it gives "+count);
+		do{
+			digit1=count%10;
+			count1+=digit1;
+			count=count/10;
+		}while(count!=0);
+		System.out.println("to count it as a single number"+count1);
+	}
+}

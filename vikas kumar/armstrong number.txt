@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class leap {
+
+	public static void main(String args[])
+	{
+		
+		Scanner viki =new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=viki.nextInt();
+		int z=num;
+		int count=0,digit,rev=0;
+		do
+		{
+			digit=num%10;
+			count+=Math.pow(digit, 3);
+			
+			num=num/10;
+		}while(num!=0);
+		System.out.println(count);
+		if(count==z)
+		{
+			System.out.println("number is armstrong number");
+		}
+		else
+		{
+			System.out.println("number is not armstrong number");
+		}
+	}
+}

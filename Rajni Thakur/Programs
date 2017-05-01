@@ -67,5 +67,27 @@ public class squarenum {
 		}
 	
 
+public static void main(String[]args){
+		System.out.println("enter value");
+Scanner val=new Scanner(System.in);
+
+int num= val.nextInt();
+int post=0;
+int obj=0;
+while(num!=0){
+	int rem=num%10;
+	if(rem<9){
+		rem=rem+1;
+	}
+	//System.out.print(rem);
+	num=num/10;
+	obj =obj+rem*(int)Math.pow(10,post);
+	post++;
+	
+}
+System.out.print(obj);
+	
+}
+
 }
 

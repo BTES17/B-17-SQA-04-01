@@ -460,10 +460,40 @@ public static void main(String[]ad)
 	}
 
 
-
-A,1917,27022017900,$GPGGA,105147.00,3044.83377,N,07644.92355,E,1,08,1.57,318.0,M,-37.4,M,,=74 $GPRMC,105148.00,A,3044.83371,N,07644.92349,E,0.193,,080517,,,A=70, B,24,140,0,0.00 v,0 C,0,0,0,0,0
-
-
+//A,1917,27022017900,$GPGGA,105147.00,3044.83377,N,07644.92355,E,1,08,1.57,318.0,M,-37.4,M,,=74 $GPRMC,105148.00,A,3044.83371,N,07644.92349,E,0.193,,080517,,,A=70, B,24,140,0,0.00 v,0 C,0,0,0,0,0
+	public static void main(String[]ag)
+	{
+		String S1=new String("A,1917,27022017900,$GPGGA,105147.00,3044.83377,N,07644.92355,E,1,08,1.57,318.0,M,-37.4,M,,=74 "
+				+ "$GPRMC,105148.00,A,3044.83371,N,07644.92349,E,0.193,,080517,,,A=70, B,24,140,0,0.00 v,0 C,0,0,0,0,0");
+		int Size=S1.length();
+		System.out.println("Size: "+Size);
+		String S2=S1.replace("=","*");
+		System.out.println(S2);
+		int index=S1.indexOf('$');
+		String Time=S1.substring(index+7,index+11);
+		System.out.println("Time       : "+Time);
+		String Lat=S1.substring(index+17,index+29);
+		System.out.println("Lat        : "+Lat);
+		String Longi=S1.substring(index+30,index+43);
+		System.out.println("Longi      : "+Longi);
+		String FixQuality=S1.substring(index+44,index+45);
+		System.out.println("FixQuality : "+FixQuality);
+		String SatQuality=S1.substring(index+46,index+48);
+		System.out.println("SatQuality : "+SatQuality);
+		String HDOP=S1.substring(index+49,index+53);
+		System.out.println("HDOP       : "+HDOP);
+		String Altitude=S1.substring(index+54,index+59);
+		System.out.println("Altitude   : "+Altitude);
+		String HeightWGS84=S1.substring(index+62,index+69);
+		System.out.println("HeightWGS84: "+HeightWGS84);
+		String Checksum=S1.substring(index+71,index+74);
+		System.out.println("Checksum   : "+Checksum);
+		String Speed=S1.substring(index+121,index+126);
+		System.out.println("Speed      : "+Speed);
+		String Date=S1.substring(index+128,index+134);
+		System.out.println("Date       : "+Date);
+	}
+}
 
 
 

@@ -182,3 +182,288 @@ count++;
 }
 }
 */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+Date 31/3/17
+*********************************************************************************************************
+1. WAP to declare array and add elements in the array through user input.
+2. WAP to search an element in the array.
+ public static void main(String[]ag)
+ 	{
+	int n=0;
+	System.out.println("Enter No. of elements");
+	Scanner scan1=new Scanner(System.in);
+	int count=scan1.nextInt();
+		int[] Myarray= new int[count];
+		System.out.println("Enter "+count+" values");
+		Scanner scan=new Scanner(System.in);
+		for(int i=0;i<count;i++)
+		{
+			Myarray[i]=scan.nextInt();
+		}
+		System.out.println();
+		for( n=0;n<count;n++)
+		{
+			if(Myarray[n]==47)
+			{
+					System.out.println("Myarray on "+n+" is "+Myarray[n]);
+					break;	
+			}	
+		}
+		if(n==count)
+		System.out.println("47 not found");
+	}
+*/
+
+******************************************************************************************************
+3. WAP to find largest elemnt in the array.
+/*	public static void main(String[]af)
+	{
+		int max=0;
+		int k=0;
+		int count=0;
+		System.out.println("Enter 5 Numbers");
+		Scanner scan=new Scanner(System.in);
+		int[] My=new int[6];
+		for(int i=0;i<5;i++)
+			{
+			My[i]=scan.nextInt();
+			}
+		max=My[0];
+		for(k=0;k<5;k++)
+			{
+				if(max<My[k])
+				{
+					max=My[k];
+				}
+			}
+		System.out.println(max+" is greater");
+	}
+
+***********************************************************************************************************
+4. WAP to sort the elements of array in ascending order.
+/*	public static void main(String[]ag)
+	{
+		int max=0;
+		int j=0;
+		int min=0;
+		int k=0;
+		System.out.println("Enter 5 Numbers");
+		Scanner scan=new Scanner(System.in);
+		int[] My=new int[6];
+			for(int i=0;i<5;i++)
+			{
+				My[i]=scan.nextInt();
+			}
+		while(min<5)
+		{
+			max=My[k];
+		for(j=k+1;j<5;j++)
+			{
+				if(My[j]>max)
+					{
+					max=My[j];
+					My[j]=My[min];	
+					My[min]=max;
+									
+					}
+					}
+		System.out.println(max);
+		min++;
+		k++;
+		}
+	}
+*/
+
+
+*************************************************************************************************
+5. Reverse the array
+/*	
+public static void main(String[]ag)
+{
+	int i=0;
+	int j=0;
+	int temp=0;
+	Scanner scan=new Scanner(System.in);
+	System.out.println("Enter No. of Array");
+	int Arr=scan.nextInt();
+	System.out.println("Enter "+Arr+" Numbers");
+	int[] My=new int[Arr];
+	for(i=0;i<Arr;i++)
+	{
+		My[i]=scan.nextInt();
+	}
+	int a=My.length;
+	for(i=a-1;i>j;i--)
+	{
+		temp=My[i];
+		My[i]=My[j];
+		My[j]=temp;
+		j++;
+	}
+	for(i=0;i<Arr;i++)
+	{
+		System.out.print(My[i]);
+	}
+		
+}*/
+************************************************************************************************************
+
+3/4/17
+2. WAP to find an element in the 2 D array???????????????????????????????????????
+3. WAP to find the sum of all elements in 2D array??????????????????????????????
+
+
+********************************************************************************************************
+1. WAP to print enter values in 2 D array and print the array as matrix
+4. WAP to print the summ of elements row wise. 
+public static void main(String[]ad)
+	{
+		int Col=0;
+		int Row=0;
+		int total=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter No. of Row");
+		int Rowsize=scan.nextInt();
+		System.out.println("Enter No. of Col");
+		int Colsize=scan.nextInt();
+		int[][] DArray=new int[Rowsize][Colsize];
+		System.out.println("Enter values");
+		for(Row=0;Row<Rowsize;Row++)
+		{
+			for(Col=0;Col<Colsize;Col++)
+			{
+					DArray[Row][Col]=scan.nextInt();
+			}
+		}
+				for(Row=0;Row<Rowsize;Row++)
+				{
+					for(Col=0;Col<Colsize;Col++)
+					{
+						total=total+DArray[Row][Col];
+				}
+				System.out.println("Sum of Row "+Row+"="+total);
+					total=0;
+					}
+	}
+
+***********************************************************************************************************
+5. WAP to print the sum of elements coulmn wise.
+	public static void main(String[]ad)
+	{
+		int total=0;
+		int i=0;
+		int j=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter No. of Row");
+		int Rowsize=scan.nextInt();
+		System.out.println("Enter No. of Col");
+		int Colsize=scan.nextInt();
+		int[][] DArray=new int[Rowsize][Colsize];
+		System.out.println("Enter values");
+		for(int Row=0;Row<Rowsize;Row++)
+		{
+			for(int Col=0;Col<Colsize;Col++)
+			{
+				DArray[Row][Col]=scan.nextInt();
+				}
+		}
+		for(i=0;i<Rowsize;i++)
+		{
+			for(j=0;j<Colsize;j++)
+			{
+				System.out.print("  "+DArray[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.print("T:");
+		for(j=0;j<Colsize;j++)
+		{
+			for(i=0;i<Rowsize;i++)
+			{
+			total=total+DArray[i][j];
+			}
+			System.out.print(total+"  ");
+			total=0;
+		}
+	}
+*************************************************************************************************
+
+6. WAP to print sum of diagonal elements of the square array. ??????????????????????????
+
+***********************************************************************************************************
+
+5/4/17
+1. WAP to reverse a String without using the Reverse method.
+
+
+
+*********************************************************************************************************
+2. WAP to print "Hello Java" as " Avaj OlleH"
+/*	public static void main(String[]ag)
+	{
+		char Data=' ';
+		String S1=new String("Cool Ankit");
+		System.out.println(S1);
+		//String S2=new String();
+		String S2=S1.toLowerCase();
+		int Size=S2.length();
+	
+		for(int i=Size-1;i>=0;i--)
+		{
+			Data=S2.charAt(i);
+			if(i==Size-1)
+			{
+				String Data1=S2.valueOf(Data);
+				System.out.print(Data1.toUpperCase());
+			}
+			else if (Data==' ')
+			{
+				Data=S2.charAt(--i);
+				String Data1=S2.valueOf(Data);
+				System.out.print(" "+Data1.toUpperCase());
+			}
+			else
+				System.out.print(Data);
+		}
+	}*/
+
+************************************************************************
+3. WAP to print "Hello Java" as "Java Hello". 
+2. Wap to find that a word exist in the String or not. 
+5. WAP to print the char in the string uppercase and lowercase alternatively. 
+
+6. Kindly upload the files in the folder as we will discuss tomorrow.
+7. Practicse revrese(), toupercase(), tolowercase(), trim(), contains(), equals(), ==, length(),
+   subString, chartoArray() and valueof() methods . 
+
+******************************************************************************************************************
+8.	//Size of string
+	//Lower case
+	//Upper case
+ 	public static void main(String[]ag)
+	{
+		String S1=new String("JAvcvdVkjgfnjkdnjkd226A");
+		int Size=S1.length();
+		System.out.println(Size);
+		char a=S1.charAt(0);
+		String b=S1.toUpperCase();
+		System.out.println(b);
+		String c=S1.toLowerCase();
+		System.out.println(c);
+	}
+
+
+
+
+
+
+
+
+

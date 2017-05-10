@@ -205,6 +205,32 @@ public static void main(String args[]){
 	
 	
 }*/
+// Find frequency of each char
+	public static void main(String args[]){
+		int i,Size,j,count=0;
+		char data=' ';
+		String my="";
+		String a=new String("hello java ankit");
+		Size=a.length();
+		for(i=0;i<Size;i++){
+			data=a.charAt(i);
+			String my1=my.valueOf(data);
+			if(my.contains(my1)==false)
+			{
+			for(j=i;j<Size;j++){
+				if(data==a.charAt(j))
+				{
+					count++;
+			}
+			
+			}
+			System.out.println(data+" : "+count);
+			count=0;
+			my+=data;
+		}
+			}
+	}
 }
+
 
 

@@ -1,0 +1,76 @@
+public class Information {
+	String name;
+	String Address; 
+    int Marks;
+    Information(){
+    	
+    }
+    Information(String na, String addr, int mar){
+    	name=na;
+		Address=addr;
+     	Marks=mar;
+    }	
+    
+int registration(){
+	int per;
+	return per=(Marks*100)/100;
+	}
+   void display(){
+	   System.out.println(name);
+	   System.out.println(Address);
+	   System.out.println(Marks);
+   }
+}
+
+import java.util.Scanner;
+
+public class myclass {
+	public static void main(String args[]){
+		
+		Information obj1=new Information("Rajni","chd",70);
+		Information obj2=new Information("Rajnijjo","chd",90);
+		//int per=obj1.registration();
+		//System.out.println(obj1.Address+" "+obj1.Marks+" "+obj1.name+" "+per);
+		obj1.display();
+		
+	}
+
+}
+
+
+
+
+
+
+/*public class myclass {
+	public static void main(String args[]){
+		String na;
+		String addr;
+		int mar;
+		Scanner scan1= new Scanner(System.in);
+		
+		Information[]obj1=new Information[3];
+		for(int i=0;i<3;i++){
+			obj1[i]=new Information();
+	
+			System.out.print("Enter the name");
+			na=scan1.next();
+			System.out.print("Enter the address");
+			addr=scan1.next();
+			System.out.print("Enter the marks");
+			mar=scan1.nextInt();
+			obj1[i].Information(na,addr,mar);  
+			System.out.println(obj1[i].Address+" "+obj1[i].Marks+" "+obj1[i].name);
+		}
+		//for (int i=0;i<3;i++){
+		
+		//}
+//		Information obj1=new Information();
+//		Information obj2=new Information();
+//		obj1.registration("Rajni","chd",89);
+//		obj2.registration("jnfhjd","mohali",78);
+//		String aj=obj2.Address+" "+obj2.Marks+" "+obj1.name;
+//		System.out.println(aj);
+	}
+    
+}*/

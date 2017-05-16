@@ -1,0 +1,30 @@
+package pack1;
+import java.util.Scanner;
+public class vikas {
+
+	public static void main(String args[])
+	{
+	
+		String s="helAAlo";
+		int size=s.length();
+		String str="";
+		char ch,c;
+		int count;
+		for(c='A';c<='z';c++)
+		{
+			count=0;
+			for(int j=0;j<size;j++)
+			{
+			   ch=s.charAt(j);
+			   if(ch==c)
+			   {
+				   count++;
+			   }
+			}
+			if(count>0)
+			System.out.println(c+" : "+count);
+			
+		}
+		
+	}
+}

@@ -1,0 +1,26 @@
+package Mypackage;
+
+public class Object_and_Class_Example_Initialization_through_method {	
+		int id;
+		String name;	
+	void insert(int i, String n)
+		{
+			id = i;
+			name = n;
+		}
+	void display()
+		{
+			System.out.println(+id+ " " +name);
+		}
+}
+	class Student4{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Object_and_Class_Example_Initialization_through_method s1 = new Object_and_Class_Example_Initialization_through_method();
+		Object_and_Class_Example_Initialization_through_method s2 = new Object_and_Class_Example_Initialization_through_method();
+			s1.insert(121, "Gaurav");
+			s2.insert(121, "Gaurav");
+				s1.display();
+				s1.display();
+	}
+}

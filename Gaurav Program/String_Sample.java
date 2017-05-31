@@ -6,6 +6,7 @@ public class String_Sample {
 		// TODO Auto-generated method stub
 	//Use of Equal method
 String ch = "My name is java.";
+String words = ch;
 System.out.println("A. Use of equals method");
 	boolean A = ch.equals("My name is Java.");
 	System.out.println(A);
@@ -41,6 +42,17 @@ System.out.println("E. Use of toUpperCase method");
 System.out.println("*************************");
 System.out.println("F. Use of contains method");
 	System.out.println(ch.contains("java"));
+	//Use of split method
+System.out.println("*************************");
+System.out.println("G. Use of split method");
+System.out.println("Origonal Texts is 'My name is java.'");
+String []split = words.split("y");
+int size2 = split.length;
+int i = size2-1;
+	while(i >= 0)
+		{
+			System.out.print(split[i]);
+			i--;
+		}	
 	}
-
 }

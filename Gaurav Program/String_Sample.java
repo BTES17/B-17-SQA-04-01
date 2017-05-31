@@ -54,5 +54,13 @@ int i = size2-1;
 			System.out.print(split[i]);
 			i--;
 		}	
+		System.out.println();
+	//Use of concat method
+System.out.println("*************************");
+System.out.println("H. Use of concat method");
+String sentence = "My name";
+	System.out.println("Before: " +sentence);
+	sentence = sentence.concat(" is Gaurav.");
+	System.out.println("After using 'concat' method: " +sentence);
 	}
 }

@@ -62,20 +62,24 @@ String sentence = "My name";
 	System.out.println("Before: " +sentence);
 	sentence = sentence.concat(" is Gaurav.");
 	System.out.println("After using 'concat' method: " +sentence);
+			//How to print 'HaPpY bIrThDaY'
 System.out.println("*************************");
+System.out.println("I. How to print 'HaPpY bIrThDaY'");
+String ch2 = "Happy BirthDay";
+	//String ch3 = ch2.toLowerCase();
 	int size3 = ch2.length();		
-	for(i = 0; i<size3; i++)	
-		{
-			if(i%2==0)
-				{
-					String s = String.valueOf(ch2.charAt(i));				
-					System.out.print(s.toUpperCase());	
-				}	
-			else 
-				{
-					String s = String.valueOf(ch2.charAt(i));				
-					System.out.print(s.toLowerCase());			
-				}
-		}		
+		for(i = 0; i<size3; i++)	
+			{
+				if(i%2==0)
+					{
+						String s = String.valueOf(ch2.charAt(i));				
+						System.out.print(s.toUpperCase());	
+					}	
+				else 
+					{
+						String s = String.valueOf(ch2.charAt(i));				
+						System.out.print(s.toLowerCase());			
+					}
+			}	
 	}
 }

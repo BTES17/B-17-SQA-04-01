@@ -1,0 +1,33 @@
+package Mypackage;
+
+import java.util.Scanner;
+
+public class String_Frequency_of_Char {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String ch = new String();
+char i, character;
+int j, Count;
+Scanner in = new Scanner(System.in);
+System.out.println("Enter your String");
+ch = in.next();
+int l = ch.length(); //finding the length of the string
+System.out.println("Output:");
+System.out.println("=========================="); //this is just for styling the look of the output
+System.out.println("Alphabet\tFrequency");
+System.out.println("==========================");
+	for(i = 0; i <=122; i++)
+		{
+			Count = 0;
+			for(j = 0; j < l; j++)
+				{
+					character = ch.charAt(j);//extracting characters of the string one by one
+					if(character==i)//first checking the whole string for 'a', then 'b' and so on
+						Count++;	//increasing count of those aplhabets which are present in the string
+				}
+			if(Count>0)//printing only those alphabets whose count is not '0'
+	        System.out.println(i+"\t\t"+Count);	
+		}
+	}
+}

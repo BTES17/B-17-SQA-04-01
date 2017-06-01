@@ -1,0 +1,21 @@
+package Mypackage;
+
+public class String_Frequency_of_Words {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "My name is Gaurav.";
+		s = s + " ";
+		int l = s.length();
+		int count = 0;
+		for(int i=0;i<l;i++)
+		        {
+		            if(s.charAt(i)==' ')
+		            {
+		            	count++;
+		            }
+		        }
+		System.out.println("Number of words in senctence i.e. '" +s+ "'is '"+count+ "'.");
+	}
+
+}

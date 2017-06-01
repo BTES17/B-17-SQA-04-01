@@ -62,5 +62,20 @@ String sentence = "My name";
 	System.out.println("Before: " +sentence);
 	sentence = sentence.concat(" is Gaurav.");
 	System.out.println("After using 'concat' method: " +sentence);
+System.out.println("*************************");
+	int size3 = ch2.length();		
+	for(i = 0; i<size3; i++)	
+		{
+			if(i%2==0)
+				{
+					String s = String.valueOf(ch2.charAt(i));				
+					System.out.print(s.toUpperCase());	
+				}	
+			else 
+				{
+					String s = String.valueOf(ch2.charAt(i));				
+					System.out.print(s.toLowerCase());			
+				}
+		}		
 	}
 }

@@ -11,7 +11,7 @@ char i, character;
 int j, Count;
 Scanner in = new Scanner(System.in);
 System.out.println("Enter your String");
-ch = in.next();
+ch = in.nextLine();
 int l = ch.length(); //finding the length of the string
 System.out.println("Output:");
 System.out.println("=========================="); //this is just for styling the look of the output

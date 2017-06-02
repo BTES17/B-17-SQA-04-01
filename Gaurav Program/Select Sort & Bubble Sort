@@ -1,0 +1,85 @@
+***************************Wap to sort array using Selection Sort method***************************
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Array_Selection_Sort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int number, i,j, swap, postion;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter number of integer: ");
+		number = in.nextInt();
+		int []Myvar = new int[number];
+		System.out.println("Enter " +number+ " number of integer below:");
+		System.out.println("===============================");
+			for(i = 0; i < number; i++)
+				{
+					Myvar[i] = in.nextInt();
+				}
+			for(i = 0; i < number - 1; i++)
+				{
+					postion = i;
+					for(j = i+1; j < number; j++)
+						{
+							if(Myvar[postion] > Myvar[j])
+							postion = j;
+						}
+					if(postion !=i)
+						{
+							swap = Myvar[i];
+							Myvar[i] = Myvar[postion];
+							Myvar[postion] = swap;
+						}
+				}
+		System.out.println("Sorted Array are:");
+		System.out.println("===============================");
+		for(i = 0; i < number; i++)	
+			{
+				System.out.println(Myvar[i]);
+			}		
+	}
+
+}
+
+
+***************************Wap to sort array using Bubble Sort method***************************
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Bubble_Sorting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int Number, i,j, temp;
+Scanner in = new Scanner(System.in);
+System.out.println("Enter number of integer: ");
+Number = in.nextInt();
+int []Myvar = new int[Number];
+System.out.println("Enter " +Number+ " number of integer below:");
+System.out.println("===============================");
+	for(i = 0; i < Number; i++)
+		{
+			Myvar[i] = in.nextInt();
+		}
+	for(i = 0; i < Number - 1; i++)
+		{
+			for(j = 0; j < Number - i - 1; j++)
+				{
+					if (Myvar[j] < Myvar[j+1])
+						{
+							temp = Myvar[j];
+							Myvar[j] = Myvar[j+1];
+							Myvar[j+1] = temp;
+						}
+				}
+		}
+System.out.println("Sorted numbers are:");
+	for(i = 0; i < Number; i++)
+		{
+			System.out.println(Myvar[i]);
+		}
+	}
+}

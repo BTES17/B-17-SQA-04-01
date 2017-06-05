@@ -24,3 +24,47 @@ public class Object_and_Class_Example_Initialization_through_method {
 				s1.display();
 	}
 }
+*************
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Student {
+String name;
+int rollno, marks;
+static String collegename = "MAIMT";
+	
+void enroll()
+	{
+	
+		Scanner in = new Scanner(System.in);
+		name = in.next();
+		rollno = in.nextInt();
+		marks = in.nextInt();	
+	}
+void display()
+	{
+		System.out.println(name+ " " +rollno+ " " +marks);
+	}
+}
+class TestStudent4{ 
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Student oj1 = new Student();
+	Student oj2 = new Student();
+	Student oj3 = new Student();
+	Student oj4 = new Student();
+	Student oj5 = new Student();
+	obj1.enroll();
+	obj2.enroll();
+	obj3.enroll();
+	obj4.enroll();
+	obj5.enroll();
+	obj1.display();
+	obj2.display();
+	obj3.display();
+	obj4.display();
+	obj5.display();
+	}
+
+}

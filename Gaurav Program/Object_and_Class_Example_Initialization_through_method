@@ -79,3 +79,22 @@ public static void main(String[] args) {
 
 	}
 }
+***
+import java.util.Scanner;
+public class Take_Something_Return_Something {
+int marks(int a, int b)
+{
+	int c = a+b;
+	return c;
+}
+public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Take_Something_Return_Something obj1 = new Take_Something_Return_Something();
+		Scanner in = new Scanner(System.in);
+		int x = in.nextInt();
+		int y = in.nextInt();
+		int z = obj1.marks(x,y);
+		System.out.println(z);
+	}
+}

@@ -1,0 +1,155 @@
+//Return nothing and take nothing
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Student {
+String name;
+int rollno, marks;
+static String collegename = "MAIMT";
+static float totalmarks = 100;
+float percentage;
+void enroll()
+	{	
+		Scanner in = new Scanner(System.in);
+		name = in.next();
+		rollno = in.nextInt();
+		marks = in.nextInt();	
+		percentage = ((float)marks/totalmarks)*10;
+	}
+void percentage()
+	{
+		percentage = ((float)marks/totalmarks)*10;
+		System.out.println(percentage);	
+	}
+void display()
+	{
+		System.out.println(name+ "\t" +rollno+ "\t" +marks+ "\t" +percentage+ "\t" +collegename);
+	}
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Student obj1 = new Student();//Local Variable
+	Student obj2 = new Student();
+	Student obj3 = new Student();
+	Student obj4 = new Student();
+	Student obj5 = new Student();
+	System.out.println("Enter data(Name, Rollno, Marks) for the 5 students");
+	obj1.enroll();
+	obj2.enroll();
+	obj3.enroll();
+	obj4.enroll();
+	obj5.enroll();
+	System.out.println("Student Details are:");
+	System.out.println("Name \tRollno \tMarks \tPercentage(%) \tCollegename");
+	System.out.println("===================================================");
+	obj1.display();
+	obj2.display();
+	obj3.display();
+	obj4.display();
+	obj5.display();
+	System.out.println("Percentage are:"); 
+	System.out.println("Percentage(%)");
+	System.out.println("=============");
+	obj1.percentage();
+	obj2.percentage();
+	obj3.percentage();
+	obj4.percentage();
+	obj5.percentage();
+	System.out.println("**************");
+	}
+}
+*************************************************************
+//Return something and take something
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Student_Method_1 {
+
+	int sum(int a, int b)
+	{
+		int c = a+b;
+		return c;
+	}
+	float per(float m)	
+	{
+		float z= (m/100)*10;
+		return z;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Student_Method_1 obj1 = new Student_Method_1();
+Scanner in = new Scanner(System.in);
+int a, b;
+a = in.nextInt();
+b = in.nextInt();
+float c = obj1.sum(a, b);
+System.out.println(c);
+float x = obj1.per(c);
+System.out.println(x);
+
+	}
+}
+*************************************************************
+//Return Nothing but take something
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Student_Method_2{
+int z;
+//int a,b;
+void sum(int c, int d)
+	{
+	//	a=c;
+	//	b=d;
+		z=c+d;	
+	}
+void display()
+	{
+		System.out.println("a+ "+" +b+ =" +z);
+	}
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Student_Method_2 obj1 = new Student_Method_2();
+		Scanner in = new Scanner(System.in);
+		int a, b;
+		a = in.nextInt();
+		b = in.nextInt();
+		//int c = obj1.sum(a,b);
+		obj1.sum(a,b);
+		obj1.display();
+	}
+}
+*************************************************************
+//Return something but take Nothing
+
+package Mypackage;
+
+import java.util.Scanner;
+
+public class Student_Method_3 
+	{
+//int a,b;
+int z;
+int sum()
+	{
+	int a,b;
+	Scanner in = new Scanner(System.in);
+	a = in.nextInt();
+	b = in.nextInt();
+	z = a+b;
+	return z;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student_Method_3 obj1 = new Student_Method_3();
+		//Scanner in = new Scanner(System.in);
+		//int a,b;
+		//a = in.nextInt();
+		//b = in.nextInt();
+		int z = obj1.sum();
+		System.out.println(z);
+	}
+}

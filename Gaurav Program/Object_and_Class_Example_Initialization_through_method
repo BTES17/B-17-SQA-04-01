@@ -31,9 +31,9 @@ import java.util.Scanner;
 
 public class Student {
 String name;
-int rollno, marks;
-static String collegename = "MAIMT";
-	
+int rollno, marks;// Instance Variable
+static String collegename = "MAIMT"; //Static Variable
+static double totalmarks = 100; //Static Variable
 void enroll()
 	{	
 		Scanner in = new Scanner(System.in);
@@ -41,15 +41,18 @@ void enroll()
 		rollno = in.nextInt();
 		marks = in.nextInt();	
 	}
+void percentage()
+	{
+		double per = ((double)marks/totalmarks)*100;
+		System.out.println(+per);
+	}
 void display()
 	{
-		System.out.println("======================================");
-		System.out.println("Name \t Rollno \tMarks \tCollegename");
 		System.out.println(name+ "\t " +rollno+ "\t\t" +marks+ "\t" +collegename);
 	}
 public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	Student obj1 = new Student();
+	Student obj1 = new Student(); //Local Variable
 	Student obj2 = new Student();
 	Student obj3 = new Student();
 	Student obj4 = new Student();
@@ -59,11 +62,20 @@ public static void main(String[] args) {
 	obj3.enroll();
 	obj4.enroll();
 	obj5.enroll();
+	System.out.println("Student Details are");
+	System.out.println("=======================================");
+	System.out.println("Name \t Rollno \tMarks \tCollegename");
 	obj1.display();
 	obj2.display();
 	obj3.display();
 	obj4.display();
 	obj5.display();
-	}
+	System.out.println("Percentage are");	
+	obj1.percentage();
+	obj2.percentage();
+	obj3.percentage();
+	obj4.percentage();
+	obj5.percentage();
 
+	}
 }

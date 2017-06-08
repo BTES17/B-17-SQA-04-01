@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+
+public class Constructor {
+
+	String name;
+	int marks;
+	int id;	
+	Constructor(String n, int m, int i)//parameterize constructor
+	{
+		name = n;
+		marks = m; 
+		id = i;
+	}
+	Constructor(String n, int m)//parameterize constructor
+	{
+		name = n;
+		marks = m; 
+	}
+	Constructor(int m)//parameterize constructor
+	{
+		marks = m; 
+	}
+	Constructor()//default constructor
+	{
+	}
+	void display()
+	{
+		System.out.println(name+ " " +marks+ " " +id);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Constructor obj1 = new Constructor("Gaurav", 101, 91);
+		Constructor obj2 = new Constructor();
+		Constructor obj3 = new Constructor("Makk", 102);
+		Constructor obj4 = new Constructor(103);
+		System.out.println("1) initialze value of instance value at the time of obj creation");
+		obj1.display();
+		obj3.display();
+		obj4.display();
+		Scanner in = new Scanner(System.in);		
+		Constructor obj5 = new Constructor();
+		obj5.name = in.next();
+		obj5.marks = in.nextInt();
+		obj5.id = in.nextInt();
+		obj5.display();
+		System.out.println("2) Doesn't initialze value of instance value at the time of obj creation");
+		obj2.display();
+		
+	}
+
+}

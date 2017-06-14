@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class myfirstclaqss {
+
+	public static void main(String[] args) {
+		String c="Create,Username,Facebook,Email or Phone,Female,Day,Month";
+		String[] label =  c.split(",");
+		for(int i=0;i<label.length;i++){
+			System.out.println(label[i]);
+		}
+	
+		System.setProperty("webdriver.chrome.driver","C:\\Documents and Settings\\install\\Desktop\\Rajni Salenium\\chromedriver.exe");
+     WebDriver driver=new ChromeDriver();
+    
+    // WebDriver driver1=new ChromeDriver();
+      driver.get("https://www.facebook.com");
+//      
+//      //driver1.get("https://www.google.com");
+//// String d=driver.getTitle();
+//   //   System.out.print("Title: "+d);
+//      //      driver.quit();
+////      driver1.quit();
+    ArrayList<WebElement>lab=(ArrayList<WebElement>)driver.findElements(By.tagName("Label"));
+    for(WebElement a:lab){
+    	System.out.println(a.getText());
+    }
+   
+    //size=0;
+    int i;
+    for(WebElement a:lab){
+    	for(i=0;i<label.length;i++){
+    		if(a.getText().equals(label[i])){
+    		System.out.println("Pass");
+    		break;
+    		}
+    	
+    	}
+    	if(i==label.length){
+    		System.out.println("Fail");
+    	}
+    }
+    
+//    for(WebElement a:lab){
+//    	System.out.println("a = " + a);
+//    	
+//    	
+//    }
+   
+    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+   
+    WebElement p=(driver.findElement(By.id("email")));
+    p.sendKeys("automation.gulati");
+   WebElement t=(driver.findElement(By.id("pass")));
+     t.sendKeys("Auto@123");
+     try{
+    WebElement l=(driver.findElement(By.id("u_0_r")));
+      l.click();
+     }
+     catch(Exception e){
+    	 System.out.print(e);
+     }
+     
+   //driver.close();
+     try{
+   WebDriverWait wait=new WebDriverWait(driver,30);
+	   wait.until(ExpectedConditions.presenceOfElementLocated(By.id("userNavigationLabel")));
+//		   WebElement h=(driver.findElement(By.id("u_0_b")));
+//		      h.click();
+   
+  
+	   WebElement d=(driver.findElement(By.id("userNavigationLabel")));
+	   d.click();
+   }
+   catch(Exception e){
+	   System.out.print("Fail");
+   }
+ //driver.close();
+  // WebDriverWait wait=new WebDriverWait(driver,30);
+   
+	}
+
+}

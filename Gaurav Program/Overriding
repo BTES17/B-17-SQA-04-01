@@ -1,0 +1,29 @@
+Public and Default only specifier will be used for Class.
+we can create local final variable without his initialization. because it will be use inside the method
+
+ class SBI {
+	int interst()
+	{
+		System.out.println("SBI interest is");
+		return 5;
+	}
+}
+ class ICICI extends SBI
+{
+	int interst()
+	{
+		System.out.println(super.interst());
+	System.out.println("ICICI interest is");
+	return  8;
+	}
+}
+ public class Banks{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ICICI obj1 = new ICICI();
+		//Banks obj2 = new Banks();
+		//System.out.println("SBI Interest:" +obj2.interest());
+		System.out.println("Interest:" +obj1.interst());
+	}
+
+}

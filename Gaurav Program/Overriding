@@ -1,10 +1,11 @@
 Public and Default only specifier will be used for Class.
 we can create local final variable without his initialization. because it will be use inside the method
 
+ 
  class SBI {
-	int interst()
+	 int interst()
 	{
-		System.out.println("SBI interest is");
+		System.out.print("SBI interest is ");
 		return 5;
 	}
 }
@@ -13,8 +14,8 @@ we can create local final variable without his initialization. because it will b
 	int interst()
 	{
 		System.out.println(super.interst());
-	System.out.println("ICICI interest is");
-	return  8;
+		System.out.print("ICICI interest is ");
+		return  8;
 	}
 }
  public class Banks{
@@ -23,7 +24,8 @@ we can create local final variable without his initialization. because it will b
 		ICICI obj1 = new ICICI();
 		//Banks obj2 = new Banks();
 		//System.out.println("SBI Interest:" +obj2.interest());
-		System.out.println("Interest:" +obj1.interst());
+		System.out.println(obj1.interst());
 	}
 
 }
+

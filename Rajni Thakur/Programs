@@ -234,3 +234,187 @@ public static void main(String args[]){
 
 
 
+========================
+package POI;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Excel extends Hls_Reader {
+
+	 int i=0;
+	 Sheet sheet;
+	 Workbook sample;
+	 FileOutputStream fileOut;
+	 FileInputStream myfile;
+	 
+	 Excel(String path){
+		 super(path);
+//    	System.setProperty("webdriver.gecko.driver", "C:\\Users\\Rajni\\Desktop\\geckodriver.exe" );
+
+    }
+	public static void main (String args[]) throws IOException
+	{		
+		
+		String path = "E:\\Desktop\\Parveen\\RG.xls";
+		Excel mf= new Excel(path);
+//		try{
+//		mf.setCellData("Row", 0, 0);
+		System.out.println(mf.getCellData("Sheet1","Environment", 2));
+		//}
+//				 catch (Exception e) {
+//					e.printStackTrace();
+//				}
+		for(int i=2;i<=6;i++)
+		{
+			String browser=mf.getCellData("Sheet1", "Environment",i);
+//			if(browser.equals("Google"))
+//			{		
+//				Map<String, Object> pr= new HashMap<String, Object>();
+//				pr.put("profile.default_content_setting_values.notifications", 2);
+//    	
+//   		
+//				ChromeOptions op= new ChromeOptions();
+//				op.setExperimentalOption("prefs", pr);
+//    		
+//    		
+//				WebDriver driver=new ChromeDriver(op);
+//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//				driver.get("https://www.facebook.com");
+//			}
+//			else if(browser.equals("Mozilla"))
+//			{
+//				WebDriver driver=new FirefoxDriver();
+//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//				driver.get("https://www.facebook.com");
+//			}
+//				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//				driver.get("https://www.facebook.com");
+		
+//		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Rajni\\Desktop\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		driver.get("https://www.facebook.com");
+		String Link=driver.getCurrentUrl();
+		System.out.println("1st Link: "+Link);
+		String Title=driver.getTitle();
+//		driver.quit();
+		System.out.println("Title: "+Title);
+		Link=driver.getCurrentUrl();
+	System.out.println("Link: "+Link);
+		Title=driver.getTitle();
+		WebElement p=(driver.findElement(By.id("email")));
+//		WebElement p=log_In.username(driver);
+		String ID=mf.getCellData("Sheet1","UN",i);
+		p.sendKeys(ID);
+		WebElement l=(driver.findElement(By.id("pass")));
+//		WebElement l=log_In.password(driver);
+		String pass=mf.getCellData("Sheet1","PW",i);
+		l.sendKeys(pass);
+		WebElement enter=driver.findElement(By.id("u_0_r"));
+//		WebElement enter=log_In.logInBtn(driver);
+		enter.click();
+	//	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		System.out.println(enter);
+//		try {
+//			Thread.sleep(3000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		String Home=driver.getTitle();
+//		System.out.println();
+		WebElement Home1=driver.findElement(By.id("u_0_b"));
+		String Result;
+		String Hom=mf.getCellData("Sheet1", "Expected Result",i);
+		System.out.println(Home+":"+i);
+		if(Hom.equals(Home))
+		//if(Hom.equals(Home.getText()))
+		{
+			Result="PASS";
+		}
+		else
+			Result="FAIL";
+		mf.setCellData("Sheet1", "P/F Status", i , Result);
+		System.out.println(Hom+":"+Home+":"+i);
+		driver.close();
+		}
+	}	//This method is to write in the Excel cell, Row num and Col num are the parameters
+	 
+	public void setCellData(String Result,  int RowNum, int ColNum) throws Exception	{
+
+			try{
+  			Row row = sheet.getRow(RowNum);
+
+			Cell cell= row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
+
+			if (cell == null) {
+
+				cell = row.createCell(ColNum);
+
+				cell.setCellValue(Result);
+				
+
+				} else {
+
+					cell.setCellValue(Result);
+				
+					System.out.println("Test");
+					System.out.println(cell.getStringCellValue());
+
+				}
+
+		fileOut = new FileOutputStream(path);
+ sample.write(fileOut);
+
+			    fileOut.close();
+			
+		}
+	       catch(Exception e){
+
+				throw (e);
+
+		}
+	}	
+	
+	public String getCellData( int RowNum, int ColNum) throws Exception	{
+		try{
+
+			Row row = sheet.getRow(RowNum);
+
+		Cell cell= row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
+
+		if (cell == null) {
+			System.out.println("No such cell exist");
+
+			return null;
+
+			} else {
+				System.out.println(cell.getStringCellValue().trim());
+
+				return cell.getStringCellValue().trim();
+
+			}
+		// Constant variables Test Data path and Test Data file name
+		}
+       catch(Exception e){
+			throw (e);
+
+	}
+	}
+}

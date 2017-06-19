@@ -6,8 +6,10 @@ public class File_Handling {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 File file = new File("D:/Hello.txt");
+File file1 = new File("D:/Hello1.jpeg");
 int i = 0;
 try{
+	file1.createNewFile();
 FileWriter write = new FileWriter(file);
 write.write("abc");
 write.close();

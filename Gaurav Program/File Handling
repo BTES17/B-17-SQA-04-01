@@ -66,3 +66,60 @@ catch(Exception e)
 	}
 
 }
+
+*****ByteArrayInput/Output Stream*****
+package Mypackage;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.Scanner;
+
+public class File_Byte_Array_Output_Input_Stream 
+{
+	public static void main(String[] args) 
+		{
+		// TODO Auto-generated method stub
+			File file = new File("D:\\Gaurav.txt");
+			File filetwo = new File("D:\\Dang.txt");
+			int Number,l;			
+			Scanner in = new Scanner(System.in);
+			System.out.println("Enter number of integer: ");
+			Number = in.nextInt();
+			System.out.println("Enter " +Number+ " number of integer below:");
+			System.out.println("===============================");
+			byte array[] = new byte[Number];
+			for(l = 0; l < Number; l++)
+			{
+				array[l] = in.nextByte();
+			}
+			try
+				{
+					FileOutputStream obj1 = new FileOutputStream(file);
+					FileOutputStream obj2 = new FileOutputStream(filetwo);
+					//FileInputStream read = new FileInputStream(file);
+					ByteArrayOutputStream write = new ByteArrayOutputStream();
+					write.write(array);
+					write.writeTo(obj1);
+					write.writeTo(obj2);	
+					write.close();
+					ByteArrayInputStream read = new ByteArrayInputStream(array);
+					int i = 0, j=1;
+					while((i=read.read())!=-1 && j<=Number)
+						{
+					
+							System.out.println(j+ ". Ascii value of character '" +i+ "' is '" +(char)i+ "'." );
+						j++;
+						}
+					read.close();
+					System.out.println("Success");
+				}
+			catch(Exception e)
+				{
+					System.out.println(e);
+				}
+		}
+
+}

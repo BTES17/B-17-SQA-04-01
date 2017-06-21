@@ -88,3 +88,38 @@ public class myfirstclaqss {
 	}
 
 }
+**************
+package Repository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class LogInObjects {
+	
+static WebElement element=null;
+
+	
+	public static WebElement username (WebDriver driver){
+		element=driver.findElement(By.id("email"));
+		return element;
+	}
+	
+		public static WebElement password (WebDriver driver){
+			element=driver.findElement(By.id("pass"));
+			return element;
+		}
+		
+		public static WebElement logInBtn(WebDriver driver){
+//			if (driver instanceof FirefoxDriver){
+//				element=driver.findElement(By.id("loginbutton"));}
+//			else if (driver instanceof ChromeDriver){
+			element=driver.findElement(By.id("loginbutton"));//}
+			return element;
+				
+			}
+		}
+
+

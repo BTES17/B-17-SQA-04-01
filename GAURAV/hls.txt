@@ -1,0 +1,29 @@
+package ExcelSheet;
+
+import Actions.LoginPageAction;
+import POI.Hls_Reader;
+
+public class ExecuteLoginPage {
+	public static void execute(){
+		String path="G:\\BTES\\poi\\book.xls";
+		String sheetName="Sheet1";
+		
+		Hls_Reader object = new Hls_Reader(path);
+		int Row_Start=2;
+		int Row_End=object.getRowCount(sheetName);
+		
+		for(int i=Row_Start;i<=Row_End;i++)
+		{
+			String execution = object.getCellData(sheetName, "Status",i);
+			System.out.println(execution);
+			
+			if(execution.equalsIgnoreCase("On")){
+				String browser = object.getCellData(sheetName,"Browser", i);
+				LoginPageAction.setup(browser);
+				LoginPageAction.testcase(object, i);
+				LoginPageAction.Result(object, i);
+				
+			}
+		}
+	}
+}

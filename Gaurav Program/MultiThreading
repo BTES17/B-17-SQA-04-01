@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+
+public class MultiThreading extends Thread{
+	int z;
+	static int x,y;
+void sum(int a, int b)
+{
+	z = a+b;
+}
+void display()
+{
+	System.out.println(z);
+}
+public void run()
+{
+	sum(x,y);
+	display();
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MultiThreading obj1 = new MultiThreading();	
+		Thread t = new Thread(obj1);
+		Scanner in = new Scanner(System.in);
+		 x = in.nextInt();
+		 y = in.nextInt();
+		t.start();
+	}
+
+}

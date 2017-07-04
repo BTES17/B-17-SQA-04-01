@@ -1,0 +1,51 @@
+
+public class MutliThreading_Synchronized extends Thread{
+	static MutliThreading_Synchronized demo ;
+	
+	synchronized public void Booking()
+	{
+		System.out.println(Thread.currentThread().getName()+" ticket booking");
+		for(int i=1;i<=2; i++)
+		{
+			System.out.println(i);
+			try {
+					Thread.sleep(10);
+				} 
+			catch (InterruptedException e) 
+			{
+			// TODO Auto-generated catch block
+				e.printStackTrace();
+				e.getMessage();
+			}
+		}
+	}
+	void Display()
+	{
+		System.out.println(Thread.currentThread().getName()+ " Ticket Booked");
+	}
+public void run()
+{
+	//System.out.println("I am in run");
+	
+	demo .Booking();
+	Display();
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		demo= new MutliThreading_Synchronized();
+		//MutliThreading_Synchronized demo = new MutliThreading_Synchronized();
+		MutliThreading_Synchronized obj1 = new MutliThreading_Synchronized();
+		MutliThreading_Synchronized obj2 = new MutliThreading_Synchronized();
+		MutliThreading_Synchronized obj3 = new MutliThreading_Synchronized();
+		MutliThreading_Synchronized obj4 = new MutliThreading_Synchronized();
+		MutliThreading_Synchronized obj5 = new MutliThreading_Synchronized();
+		obj1.start();
+		obj2.start();
+		obj3.start();
+		obj4.start();
+		obj5.start();
+		//obj1.setName("Gaurav");
+		obj1.setPriority(MIN_PRIORITY);
+	}
+
+}

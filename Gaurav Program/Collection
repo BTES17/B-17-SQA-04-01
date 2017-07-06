@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+public class Collection {
+	String name;
+	int marks;
+Collection(String name, int marks)
+{
+	this.name = name;
+	this.marks = marks;
+}
+	public static void main(String[] args) {
+		Collection stu1 = new Collection("Gaurav", 91);
+		Collection stu2 = new Collection("Makk", 90);
+		ArrayList <Collection> obj = new ArrayList<Collection>();
+		System.out.println(obj.size());		
+		obj.add(stu1);
+		obj.add(stu2);
+		for(int i = 0; i < 2; i++)
+		{
+		System.out.println(obj.get(i).name);
+		System.out.println(obj.get(i).marks);
+		}
+		System.out.println(obj.size());
+		// TODO Auto-generated method stub
+	}
+
+}
+**************Collection Sort***************
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+public class Collection_Sort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ArrayList<Integer> obj = new ArrayList<Integer>();
+System.out.println(obj.size());
+obj.add(5);
+obj.add(2);
+obj.add(3);
+Collections.sort(obj);
+System.out.println(obj);
+System.out.println(obj.size());
+	}
+}

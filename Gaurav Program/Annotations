@@ -51,3 +51,16 @@ PSVM(SA[])
 demo();
 }
 }
+****************
+
+//class Class
+{
+Class class//
+
+MyAnnotation[] a=First Ammptatopm.class.,getAnnotations(MyAnnotation.class);
+for(MyAnnotaion d:a)
+{
+Syso(d.firstAnnotation());
+}
+
+

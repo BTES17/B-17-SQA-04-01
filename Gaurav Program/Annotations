@@ -1,0 +1,39 @@
+Annotations:where I will proved meta Data(Data about data)information. For Exp: Music(Under the meata data, we will provide infor like singer, last update etc..)
+Marker Interface
+1. Clone
+2. Searalizable
+XML:Extended Marker Language(User defined tags) Marker means tag. performance issue occur.
+Annotation: store the meta information of class.
+1. Build in
+  a. Override
+  class A
+  {
+  void demo()
+    {
+    }
+  }
+  class B extends A
+  {
+  @override
+  void demo()
+    }
+    }
+  }
+  Source: it just information(Source code)
+  Complie: 
+  @Suppesswarning
+  Yellow color* Scanner in = new Scanner(System.in); information given to compilor
+  Runtime: 
+  b. Suppesswarning
+  c. Dempricated: information provided to source code writer(any metioned that will be delete in future. we will add @Depericated to them).
+2. Userdefine[Java8]: 
+syntax: @interface MyAnnotation
+MyAnnotation.java(Exptension)
+@interface MyAnnotation
+{
+@Target(ElementType.Field, ElementType.Class)
+void FirstAnnotation()
+  {
+    String name
+    String date;
+  }

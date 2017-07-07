@@ -31,9 +31,23 @@ syntax: @interface MyAnnotation
 MyAnnotation.java(Exptension)
 @interface MyAnnotation
 {
-@Target(ElementType.Field, ElementType.Class)
+@Documented
+@Target(ElementType.Field, ElementType.Class, ElementType.Method)
+@Rentation(RentationPolicy.Source)how long it will go
 void FirstAnnotation()
   {
-    String name
+    String name default("raman");
     String date;
   }
+class A
+{
+@FirstAnnotation(name="raman", date="7/7/17")
+static void demp()
+{
+Syso("Hello");
+}
+PSVM(SA[])
+{
+demo();
+}
+}

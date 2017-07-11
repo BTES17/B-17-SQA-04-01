@@ -1,0 +1,58 @@
+package Select;
+import java.util.List;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class MouseHover {
+	
+	public static WebDriver driver;
+	  public static final int WAIT_TIME = 60;
+    public static void main(String[] args) {
+
+    	 String url= System.getProperty("user.dir")+"\\src\\chromedriver.exe";
+ 		 
+		    System.setProperty("webdriver.chrome.driver",url); 
+		   
+		    driver=new ChromeDriver(); 
+		   DropDown3();
+		  }
+    
+    public static void DropDown()
+    {
+    	driver.get("http://the-internet.herokuapp.com/dropdown");
+	    WebElement element=driver.findElement(By.id("dropdown"));
+		Select se=new Select(element);
+		se.selectByIndex(1);
+         
+       
+    }
+    public static void DropDown2()
+    { 
+    	driver.get("http://the-internet.herokuapp.com/dropdown");
+	    new Select(driver.findElement(By.id("dropdown"))).selectByVisibleText("Option 1");
+    } 
+    public static void DropDown3()
+    {
+    	driver.get("http://the-internet.herokuapp.com/dropdown");
+	    
+    
+
+		WebElement element=driver.findElement(By.id("dropdown"));
+		Select se=new Select(element);
+		se.selectByValue("1");
+		WebElement option = se.getFirstSelectedOption();
+		System.out.println(option.getText());
+       
+    }
+    public static void DropDown4(){
+    	driver.get("http://the-internet.herokuapp.com/dropdown");
+	    WebElement element=driver.findElement(By.id("dropdown"));
+	    Select se=new Select(element);
+	    List<WebElement> options = se.getOptions();
+	    for (WebElement option : options) {
+	    System.out.println(option.getText()); //output "option1", "option2", "option3"
+	    }
+    }
+}

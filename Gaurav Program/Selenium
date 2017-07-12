@@ -1,0 +1,30 @@
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Selenium_Basic {
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\install\\Desktop\\Gaurav Sel\\chromedriver_win32\\chromedriver.exe");
+ChromeDriver obj = new ChromeDriver();
+obj.get("https://www.google.com");
+String title = obj.getTitle();
+System.out.println("Origional Title is: " +title);
+String exp = "Gmail";
+if(title.contains(exp))
+	{
+		System.out.println("Origional title i.e. '" +title+ "' is match with expected title i.e. '" +exp+ "' so, result is pass.");
+	}
+else
+	{
+		System.out.println("Origional title i.e. '" +title+ "' is not match with expected title i.e. '" +exp+ "' so, result is Fail.");
+	}
+String source = obj.getPageSource();
+String source1 = obj.getCurrentUrl();
+System.out.println("Current URL is: '" +source1+ "'.");
+obj.manage().window().maximize();
+//obj.close();
+//obj.quit();
+
+	}
+}

@@ -1,30 +1,33 @@
-import org.openqa.selenium.chrome.ChromeDriver;
+package Mypackage;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Selenium_Basic {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-System.setProperty("webdriver.chrome.driver", "C:\\Users\\install\\Desktop\\Gaurav Sel\\chromedriver_win32\\chromedriver.exe");
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
+System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+//Launch a Firefox browser
+WebDriver driver = new FirefoxDriver();
+driver.get("https://www.Google.com");
+//Launch a Chrome browser
 ChromeDriver obj = new ChromeDriver();
-obj.get("https://www.google.com");
-String title = obj.getTitle();
-System.out.println("Origional Title is: " +title);
-String exp = "Gmail";
-if(title.contains(exp))
-	{
-		System.out.println("Origional title i.e. '" +title+ "' is match with expected title i.e. '" +exp+ "' so, result is pass.");
-	}
+obj.get("http://www.gmail.com");
+String actualTitle = obj.getTitle();
+String expTitle = "Google";
+System.out.println("ActualTitle: " +actualTitle);
+if(actualTitle.contains(expTitle))
+	System.out.println("Actual Title i.e. '" +actualTitle+ "' is match with Expected Title i.e. '" +expTitle+ "' So, Result is Pass.");
 else
-	{
-		System.out.println("Origional title i.e. '" +title+ "' is not match with expected title i.e. '" +exp+ "' so, result is Fail.");
+	System.out.println("Actual Title i.e. '" +actualTitle+ "' is not match with Expected Title i.e. '" +expTitle+ "' So, Result is Fail");
+String actualURL = obj.getCurrentUrl();
+System.out.println("ActualURL: " +actualURL);
+//System.out.println(obj.getPageSource());
+obj.manage().window().maximize();
+obj.close();
 	}
-String source = obj.getPageSource();
-String source1 = obj.getCurrentUrl();
-System.out.println("Current URL is: '" +source1+ "'.");
 
-//obj.close();
-//obj.quit();
-
-	}
 }

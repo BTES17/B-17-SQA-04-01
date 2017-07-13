@@ -31,3 +31,28 @@ obj.close();
 	}
 
 }
+****************MOZILLA FIREFOZ******************
+
+package Mypackage;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Sylenium_FireFox {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+		WebDriver obj = new FirefoxDriver();
+		long start = System.currentTimeMillis();
+		obj.navigate().to("https://www.google.com");
+		long finish = System.currentTimeMillis();
+				System.out.println(+(finish-start));
+		obj.findElement(By.linkText("Gmail")).click();
+		obj.findElement(By.id("identifierId")).sendKeys("gaurav24.dang@gmail.com");
+		obj.findElement(By.id("identifierNext")).click();
+		//obj.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
+		//obj.findElement(By.id("password")).sendKeys("abc");	

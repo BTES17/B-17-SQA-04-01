@@ -56,3 +56,46 @@ public class Sylenium_FireFox {
 		obj.findElement(By.id("identifierNext")).click();
 		//obj.manage().timeouts().implicitlyWait(3, TimeUnit.MINUTES);
 		//obj.findElement(By.id("password")).sendKeys("abc");	
+		
+*****************Used of WAIT**********************
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+public class Selenium_Basic {
+
+public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\install\\Desktop\\Gaurav Sel\\chromedriver_win32\\chromedriver.exe");
+ChromeDriver obj = new ChromeDriver();
+obj.get("https://www.google.com");
+String title = obj.getTitle();
+System.out.println("Origional Title is: " +title);
+String exp = "Gmail";
+if(title.contains(exp))
+	{
+		System.out.println("Origional title i.e. '" +title+ "' is match with expected title i.e. '" +exp+ "' so, result is pass.");
+	}
+else
+	{
+		System.out.println("Origional title i.e. '" +title+ "' is not match with expected title i.e. '" +exp+ "' so, result is Fail.");
+	}
+String source = obj.getPageSource();
+String source1 = obj.getCurrentUrl();
+System.out.println("Current URL is: '" +source1+ "'.");
+obj.manage().window().maximize();
+//obj.close();
+//obj.quit();
+obj.findElement(By.linkText("Gmail")).click();
+obj.findElement(By.id("identifierId")).sendKeys("gaurav24.dang@gmail.com");
+obj.findElement(By.id("identifierNext")).click();
+Thread.sleep(1500);
+(new WebDriverWait(obj,10)).until(ExpectedConditions.visibilityOf(obj.findElement(By.name("password"))));
+obj.findElement(By.name("password")).sendKeys("fgh");
+obj.findElement(By.id("passwordNext")).click();
+	}
+
+}

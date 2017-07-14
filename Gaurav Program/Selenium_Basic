@@ -96,6 +96,19 @@ Thread.sleep(1500);
 (new WebDriverWait(obj,10)).until(ExpectedConditions.visibilityOf(obj.findElement(By.name("password"))));
 obj.findElement(By.name("password")).sendKeys("fgh");
 obj.findElement(By.id("passwordNext")).click();
+
+*********How to use findelements method*********
+
+System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+	WebDriver obj = new FirefoxDriver();
+	obj.navigate().to("https://www.javatpoint.com");
+	List<WebElement> list = obj.findElements(By.partialLinkText("java"));
+		System.out.println(list.size());
+		for(WebElement count: list)
+		{
+			System.out.println(count.getText());
+		}
+		list.get(1).click();
 	}
 
 }

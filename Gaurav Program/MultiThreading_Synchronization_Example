@@ -1,0 +1,115 @@
+
+package Mypackage;
+
+import java.util.Scanner;
+
+class Bank implements Runnable
+	{
+		private int Balance = 120;				
+		Scanner in = new Scanner(System.in);
+		int Withdraw = in.nextInt();
+		public synchronized void run()
+			{
+				System.out.println(Thread.currentThread().getName()+" come here!!!");
+				for(int i = 1; i <= 10; i++)
+					{
+						System.out.println(i+ ". " +Thread.currentThread().getName()+" doing transaction...");
+						if(Balance > 0)
+							Balance = Balance - Withdraw;
+						else
+							System.out.println("insufficient balance...");
+					try
+						{
+							Thread.sleep(1000);
+						}
+					catch(InterruptedException e)
+						{
+							System.out.println(e);
+						}
+					}
+			}
+	}
+public class Thread_Synchronization_ATM_Exp 
+	{
+		public static void main(String[] args) 
+			{
+		// TODO Auto-generated method stub
+				Bank bank = new Bank();
+				Thread tom = new Thread(bank);
+				tom.setName("Tom");
+				Thread jerry = new Thread(bank);
+				jerry.setName("Jerry");
+				tom.start();
+				jerry.start();
+			}
+	}
+--------------------------------------------------------------------------------------
+package Mypackage;
+
+import java.util.Scanner;
+
+class Account
+{
+	private int bal;
+	public Account(int bal)
+	{
+		this.bal = bal;
+	}
+	public boolean isSufficientBalance(int w)
+	{
+		if(bal>w)
+			return true;
+		else
+			return false;			
+	}
+	public void withdraw(int amt)
+	{
+		bal = bal-amt;
+		System.out.println("Withdraw money is " +amt);
+		System.out.println("Current balance is " +bal);
+	}
+}
+class Customer implements Runnable
+{
+	private Account account;
+	private String name;
+	public Customer(Account account, String n)
+	{
+		this.account = account;
+		name = n;
+	}
+	public void run()
+	{
+		Scanner kb = new Scanner(System.in);
+	//	System.out.println(name+ ", Enter money to withdraw");
+	//	int amt = kb.nextInt();
+		synchronized(account){
+			System.out.println(name+ ", Enter money to withdraw");
+			int amt = kb.nextInt();
+		if(account.isSufficientBalance(amt))
+		{
+			System.out.println(name);
+			account.withdraw(amt);
+		}
+		else
+			System.out.println("Insufficienet Balance");
+		}
+	}
+}
+public class Thread_Synchronization_Exampale {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Account a1 = new Account(1000);
+Customer c1 = new Customer(a1,"Raj"), c2 = new Customer(a1,"Simran");
+Thread t1 = new Thread(c1);
+Thread t2 = new Thread(c2);
+t1.start();
+t2.start();
+	}
+}
+
+    Contact GitHub API Training Shop Blog About 
+
+    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
+

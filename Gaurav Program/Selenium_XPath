@@ -1,0 +1,29 @@
+package Mypackage;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Selenium_Dynamic_XPath {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+WebDriver obj = new FirefoxDriver();
+obj.navigate().to("https://in.yahoo.com/");
+obj.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+obj.findElement(By.xpath(".//*[@id='uh-search-box']")).sendKeys("Selenium");
+Thread.sleep(5000);
+List <WebElement> list =  obj.findElements(By.xpath(".//*[starts-with(@id,'yui_3_18_0_3_1500')]"));
+//List <WebElement> list =  obj.findElements(By.xpath("//*[contains(@id,‘3_18_0_3_150028’)]/a"));
+System.out.println(list.size());
+	for(WebElement e: list)
+		{
+			System.out.println(e.getText());
+		}
+	}
+}

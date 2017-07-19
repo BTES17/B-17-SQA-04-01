@@ -112,3 +112,55 @@ System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Seleni
 	}
 
 }
+****************************************************************************
+package Mypackage;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Selenium_Basic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
+System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+//Launch a Firefox browser
+//WebDriver driver = new FirefoxDriver();
+//driver.get("https://www.Google.com");
+//Launch a Chrome browser
+ChromeDriver obj = new ChromeDriver();
+obj.get("http://www.google.com");
+String actualTitle = obj.getTitle();
+String expTitle = "Google";
+System.out.println("ActualTitle: " +actualTitle);
+if(actualTitle.contains(expTitle))
+	System.out.println("Actual Title i.e. '" +actualTitle+ "' is match with Expected Title i.e. '" +expTitle+ "' So, Result is Pass.");
+else
+	System.out.println("Actual Title i.e. '" +actualTitle+ "' is not match with Expected Title i.e. '" +expTitle+ "' So, Result is Fail");
+String actualURL = obj.getCurrentUrl();
+System.out.println("ActualURL: " +actualURL);
+//System.out.println(obj.getPageSource());
+obj.manage().window().maximize();
+//obj.close();
+//By abc = By.linkText("Forgot email?");
+obj.findElement(By.linkText("Gmail")).click();
+//a.sendKeys("gaurav24.dang@gmail.com");
+String currentURL = obj.getCurrentUrl();
+System.out.println("Current URL: " +currentURL);
+obj.findElement(By.id("identifierId")).sendKeys("gaurav24.dang@gmail.com");
+obj.findElement(By.xpath("//div[contains(@id,'identifierNext')]")).click();
+//obj.findElement(By.id("identifierNext")).click();
+obj.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+obj.findElement(By.cssSelector(".whsOnd.zHQkBf")).sendKeys("*********");
+new WebDriverWait(obj, 20).until(ExpectedConditions.visibilityOf(obj.findElement(By.id("passwordNext"))));
+obj.findElement(By.id("passwordNext")).click();		
+	}
+
+}

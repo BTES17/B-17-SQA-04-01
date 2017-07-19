@@ -21,7 +21,7 @@ WebDriver driver = new FirefoxDriver();
 		driver.findElement(By.id("uh-signin")).click();
 		driver.findElement(By.id("login-username")).sendKeys("gaurav24_dang");
 		driver.findElement(By.id("login-signin")).click();
-		driver.findElement(By.id("login-passwd")).sendKeys("jaimataki");
+		driver.findElement(By.id("login-passwd")).sendKeys("***********");
 		driver.findElement(By.id("login-signin")).click();
 		/*Actions action = new Actions(driver);
 		WebElement ele = driver.findElement(By.tagName("button"));

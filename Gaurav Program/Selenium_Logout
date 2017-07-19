@@ -16,23 +16,21 @@ public class Selenium_Logout_Exp {
 		// TODO Auto-generated method stub
 System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
 WebDriver driver = new FirefoxDriver();
-driver.navigate().to("https://in.yahoo.com/");
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-driver.findElement(By.id("uh-signin")).click();
-driver.findElement(By.id("login-username")).sendKeys("gaurav24.dang");
-driver.findElement(By.id("login-signin")).click();
-driver.findElement(By.id("login-passwd")).sendKeys("jaimataki");
-driver.findElement(By.id("login-signin")).click();
-WebElement ele = driver.findElement(By.tagName("button"));
-//WebDriverWait wait = new WebDriverWait(driver, 50);
-//long starttime = System.currentTimeMillis();
-Actions action = new Actions(driver);//to hover the mouse
-action.moveToElement(ele).perform();
-//long endtime = System.currentTimeMillis();
-//double total = (endtime-starttime)/1000;
-//System.out.println(total);
-WebDriverWait wait = new WebDriverWait(driver, 10);
-wait.until(ExpectedConditions.
+		driver.navigate().to("https://in.yahoo.com/");
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.findElement(By.id("uh-signin")).click();
+		driver.findElement(By.id("login-username")).sendKeys("gaurav24_dang");
+		driver.findElement(By.id("login-signin")).click();
+		driver.findElement(By.id("login-passwd")).sendKeys("jaimataki");
+		driver.findElement(By.id("login-signin")).click();
+		/*Actions action = new Actions(driver);
+		WebElement ele = driver.findElement(By.tagName("button"));
+		action.moveToElement(ele).perform();*/
+		driver.findElement(By.xpath(".//Button[contains(@class,'uh-menu-btn')]")).click();
+		System.out.println("Click on Sign-Out link");
+		new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(driver.findElement(By.id("uh-signout"))));
+		driver.findElement(By.xpath("*//a[(@class= 'C(#000) C($menuLink):h Td(n)')]")).click();
+		System.out.println("you have successfully logout the Yahoo a/c");
 
 
 

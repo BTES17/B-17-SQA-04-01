@@ -77,18 +77,6 @@ public static void main(String[] args) throws IOException {
 				r3c2.setCellValue("Shyam");
 				XSSFCell r3c3 = row3.createCell(2);
 				r3c3.setCellValue("25");
-		workbook = new XSSFWorkbook (fis);
-		sheet = workbook.getSheetAt(0);
-		Iterator ite = sheet.rowIterator();
-		while(ite.hasNext()){
-			XSSFRow row = (XSSFRow) ite.next();
-			Iterator<Cell> cite = row.cellIterator();
-			while(cite.hasNext()){
-				XSSFCell c = (XSSFCell) cite.next();
-				System.out.print(c.toString() +"  ");
-			}
-			System.out.println();
-		}
 		fis.close();
 		workbook.write(fos);
 		fos.close();

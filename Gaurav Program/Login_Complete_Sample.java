@@ -76,7 +76,7 @@ public class Login_Complete_Sample {
 			System.out.println("Actual Title: " +sheet.getRow(count).getCell(4));
 				if(driver.getTitle().equals(sheet.getRow(count).getCell(4).getStringCellValue()))
 					{
-						setData(sheet.getRow(count).getRowNum(), 5, "pass");
+						setData(sheet.getRow(count).getRowNum(), 5, "Pass");
 						System.out.println("As the expected title i.e. '" +driver.getTitle()+  "' is same with actual title i.e. '" +sheet.getRow(count).getCell(4).getStringCellValue()+ "' so, result is Pass.");
 					}
 				else
@@ -136,7 +136,7 @@ public class Login_Complete_Sample {
 *Workbook: TestScript2                                                                        *
 *sheet: TestData                                                                              *
 *Column	TC_ID	Username	Password	Browser		Actual Result	Result        *
-*========================================================================================     *
-*Row1	TC001	gdang		********	Mozilla		TTK20 | Home                  *	
-*Row2	TC002	sandeep		********	Chrome		TK20 | Home                   *
+*=====================================================================================        *
+*Row1	TC001	gdang		********	Mozilla		TTK20 | Home    Fail          *	
+*Row2	TC002	sandeep		********	Chrome		TK20 | Home     Pass          *
 ***********************************************************************************************

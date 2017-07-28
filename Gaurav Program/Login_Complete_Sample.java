@@ -132,3 +132,11 @@ public class Login_Complete_Sample {
 			obj.excel();
 		}
 }
+***********************************************************************************************
+*Workbook: TestScript2                                                                        *
+*sheet: TestData                                                                              *
+*Column	TC_ID	Username	Password	Browser		Actual Result	Result        *
+*========================================================================================     *
+*Row1	TC001	gdang		********	Mozilla		TTK20 | Home                  *	
+*Row2	TC002	sandeep		********	Chrome		TK20 | Home                   *
+***********************************************************************************************

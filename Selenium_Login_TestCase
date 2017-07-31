@@ -1,0 +1,122 @@
+package Selenium_Package;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class TestScript_Run {
+	WebDriver driver;
+	XSSFWorkbook workbook;
+	XSSFSheet sheet;
+	XSSFRow row;
+	XSSFCell cell;
+	FileOutputStream fos = null;
+	FileInputStream fis = null;
+	String path = "E:\\TestScript2.xlsx";
+	int count = 0;
+		TestScript_Run() throws IOException
+			{
+				fis = new FileInputStream(path);
+				workbook = new XSSFWorkbook(fis);
+			}
+		public void TestData() throws IOException
+			{
+				sheet = workbook.getSheet("TestData");
+				for(int count = 1; count <= sheet.getLastRowNum(); count++)
+					{
+						row = sheet.getRow(count);
+						System.out.println("Test case i.e. '" +sheet.getRow(count).getCell(0).getStringCellValue()+ "' is running.");
+						browser(sheet.getRow(count).getCell(3).toString());
+						login(sheet.getRow(count).getCell(1).toString(), sheet.getRow(count).getCell(2).toString());
+					}
+			}
+		
+		public void browser(String browser) 
+			{
+			// TODO Auto-generated method stub
+				if(browser.equals("Mozilla"))
+					{
+						mozilla();//launch mozilla browser
+					}
+				else
+					{
+						chrome();//launch chrome browser
+					}
+			}
+		public void chrome() 
+			{
+			// TODO Auto-generated method stub
+				System.setProperty("webdriver.chrome.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\chromedriver_win32\\chromedriver.exe");
+				driver = new ChromeDriver(); 
+				driver.navigate().to("https://reportstesting1.tk20.com/campustoolshighered/start.do");
+				
+			}
+		public void mozilla() 
+			{
+			// TODO Auto-generated method stub
+			System.setProperty("webdriver.gecko.driver", "C:\\Users\\Gaurav\\Desktop\\Selenium\\geckodriver-v0.18.0-win64\\geckodriver.exe");
+			driver = new FirefoxDriver();
+			driver.navigate().to("https://reportstesting1.tk20.com/campustoolshighered/start.do");			
+			}
+		public void login(String username, String password) throws IOException 
+			{
+			// TODO Auto-generated method stub
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				driver.findElement(By.id("user")).sendKeys(username);
+				new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id("pass")));
+				driver.findElement(By.id("pass")).sendKeys(password);
+				new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='content']/form/div/div/div[1]/button")));
+				driver.findElement(By.xpath(".//*[@id='content']/form/div/div/div[1]/button")).click();
+				System.out.println("Actual Title " +row.getCell(4).getStringCellValue());
+				System.out.println("Expected Title " +driver.getTitle());
+				if(driver.getTitle().equals(row.getCell(4).getStringCellValue()))
+					{
+						setResult(sheet.getRow(count).getRowNum(), 5, "Pass");
+						System.out.println("Test case is Pass");
+					}
+				else
+					{
+						setResult(sheet.getRow(count).getRowNum(), 5, "Fail");
+						System.out.println("Test case is Fail");
+					}
+				write();
+			}
+		public void setResult(int rownum, int colnum, String result) 
+			{
+			// TODO Auto-generated method stub
+				cell = row.getCell(colnum);
+					if(cell==null)
+						{
+							cell = row.createCell(colnum);
+							cell.setCellValue(result);
+						}
+					else
+						{
+							cell.setCellValue(result);
+						}
+			}
+		public void write() throws IOException
+		{
+			fos = new FileOutputStream(path);
+			workbook.write(fos);
+			fos.flush();
+		}
+	public static void main(String[] args) throws IOException 
+		{
+			// TODO Auto-generated method stub
+			TestScript_Run obj = new TestScript_Run();
+			obj.TestData();
+		}
+}

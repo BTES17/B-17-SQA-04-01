@@ -1,0 +1,12 @@
+WebElement element;
+Point p=element.getLocation();
+syso(p.x);
+dragAndDropBy(Source, p.x, p.y)
+
+
+action.sendkeys(keys.Enter);
+action.perform();
+
+Actions action = new Actions(driver);
+Action series = action.moveToElement(element, key.enter).click().keyspress(shift,"Hello).build;
+series.perform();
